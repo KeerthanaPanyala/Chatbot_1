@@ -51,12 +51,13 @@ def ask_questions():
                     df.to_csv(csv_string, index=False)
                     csv_string.seek(0)
                     
-                    # Create the CSV agent with error handling for parsing errors
+                    # Create the CSV agent with the allow_dangerous_code parameter
                     agent = create_csv_agent(
                         ChatOpenAI(temperature=0, model="gpt-3.5-turbo"), 
                         csv_string, 
                         verbose=True, 
-                        handle_parsing_errors=True
+                        handle_parsing_errors=True,
+                        allow_dangerous_code=True  # Opt-in for dangerous code execution
                     )
                     
                     # Prepare chat history context
