@@ -10,7 +10,7 @@ def main():
     load_dotenv()
 
     # Load the OpenAI API key from the environment variable
-    if os.getenv("OPENAI_API_KEY") is None or os.getenv("OPENAI_API_KEY") == "":
+    if st.secrets["OPENAI_API_KEY"] is None or st.secrets["OPENAI_API_KEY"] == "":
         st.error("OPENAI_API_KEY is not set")
         return
 
