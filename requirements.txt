@@ -1,0 +1,9 @@
+pandas
+langchain
+streamlit
+langchain-experimental
+python-dotenv
+openai
+tabulate
+pandas-datareader
+prophet
